@@ -1,5 +1,10 @@
 package com.driver.io.entity;
 
+import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
+
 import java.io.Serializable;
 
 import javax.persistence.Column;
@@ -8,20 +13,23 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity(name = "foods")
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class FoodEntity{
 	@Id
 	@GeneratedValue
 	private long id;
-	
+
 	@Column(nullable = false)
 	private String foodId;
-	
+
 	@Column(nullable = false)
 	private String foodName;
-	
+
 	@Column(nullable = false)
 	private float foodPrice;
-	
+
 	@Column(nullable = false)
 	private String foodCategory;
 
